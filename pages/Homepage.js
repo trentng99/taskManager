@@ -16,7 +16,7 @@ import {
 } from "react-native-paper";
 import { Calendar } from "react-native-calendars";
 import TaskItem from "../components/TaskItem";
-import DateTimePicker from "@react-native-community/datetimepicker";
+import RNDateTimePicker from "@react-native-community/datetimepicker";
 import { formatDate } from "../commons/formatDate";
 
 let id = 1;
@@ -78,6 +78,8 @@ export default function Homepage({
         const selectedTodo = todos.find((todo) => todo.id === id);
         if (selectedTodo) {
           setEditInput(selectedTodo);
+          setEditTaskStartDate(new Date(selectedTodo.startDate));
+          setEditTaskEndDate(new Date(selectedTodo.endDate));
         }
         break;
       default:
@@ -242,9 +244,10 @@ export default function Homepage({
             </View>
 
             {showStartDatePicker && (
-              <DateTimePicker
-                testID="dateTimePicker"
+              <RNDateTimePicker
                 value={addTaskStartDate}
+                display="inline"
+                textColor="#333"
                 mode={mode}
                 onChange={(event, selectedDate) =>
                   onChangeAddTaskStartDate(event, selectedDate)
@@ -252,9 +255,10 @@ export default function Homepage({
               />
             )}
             {showEndDatePicker && (
-              <DateTimePicker
-                testID="dateTimePicker"
+              <RNDateTimePicker
                 value={addTaskEndDate}
+                display="inline"
+                textColor="#333"
                 mode={mode}
                 onChange={(event, selectedDate) =>
                   onChangeAddTaskEndDate(event, selectedDate)
@@ -324,9 +328,12 @@ export default function Homepage({
             </View>
 
             {showStartDatePicker && (
-              <DateTimePicker
+              <RNDateTimePicker
                 testID="dateTimePicker"
                 value={editTaskStartDate}
+                display="inline"
+                textColor="#333"
+                styles={{ textColor: "#333" }}
                 mode={mode}
                 onChange={(event, selectedDate) =>
                   onChangeEditTaskStartDate(event, selectedDate)
@@ -334,9 +341,11 @@ export default function Homepage({
               />
             )}
             {showEndDatePicker && (
-              <DateTimePicker
+              <RNDateTimePicker
                 testID="dateTimePicker"
                 value={editTaskEndDate}
+                display="inline"
+                textColor="#333"
                 mode={mode}
                 onChange={(event, selectedDate) =>
                   onChangeEditTaskEndDate(event, selectedDate)

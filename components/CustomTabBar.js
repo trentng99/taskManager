@@ -21,4 +21,4 @@ const CustomTabBar = ({ color, ...props }) => {
   );
 };
 
-export default CustomTabBar; // Don't forget to export the component
+export default CustomTabBar;
