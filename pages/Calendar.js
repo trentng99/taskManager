@@ -5,8 +5,10 @@ import { globalStyles } from "../commons/styles";
 import { Agenda } from "react-native-calendars";
 import { formatDate } from "../commons/formatDate";
 import { CalenderItem } from "../components/CalendarItem";
+import { useTheme } from "react-native-paper";
 
 export default function Calendar({ todos, setTodos }) {
+  const theme = useTheme();
   const [filteredTasks, setFilteredTasks] = useState({});
   const [selectedDate, setSelectedDate] = useState(formatDate(new Date()));
 
@@ -57,7 +59,7 @@ export default function Calendar({ todos, setTodos }) {
   return (
     <View style={globalStyles.container}>
       <Text variant="headlineLarge" style={globalStyles.heading}>
-        Calendarss
+        Calendar
       </Text>
       <Agenda
         onDayPress={onDayPress}
@@ -67,6 +69,13 @@ export default function Calendar({ todos, setTodos }) {
         refreshControl={null}
         showClosingKnob={true}
         refreshing={false}
+        theme={{
+          selectedDayBackgroundColor: theme.colors.primary,
+          agendaTodayColor: theme.colors.primary,
+          agendaKnobColor: theme.colors.primary,
+          dotColor: theme.colors.primary,
+          todayTextColor: theme.colors.primary,
+        }}
       />
       <StatusBar />
     </View>

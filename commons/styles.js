@@ -7,7 +7,7 @@ export const globalStyles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    marginTop: 24,
+    marginTop: 56,
     marginHorizontal: 16,
   },
 });

@@ -31,7 +31,7 @@ export default function App() {
       onError: "rgb(255, 255, 255)",
       errorContainer: "rgb(255, 218, 214)",
       onErrorContainer: "rgb(65, 0, 2)",
-      background: "rgb(255, 251, 255)",
+      background: "#fafafa",
       onBackground: "rgb(32, 26, 23)",
       surface: "rgb(255, 251, 255)",
       onSurface: "rgb(32, 26, 23)",

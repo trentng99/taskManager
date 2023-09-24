@@ -7,7 +7,12 @@ const Achievement = ({ title, description, icon }) => {
     <View style={styles.achievementContainer}>
       <Card style={styles.achievementCard}>
         <View style={styles.contentContainer}>
-          <Avatar.Icon icon={icon} size={24} style={styles.icon} />
+          <Avatar.Icon
+            icon={icon}
+            size={48}
+            style={styles.icon}
+            color="#FF7800"
+          />
           <Text style={styles.title}>{title}</Text>
           <Text>{description}</Text>
         </View>
@@ -38,11 +43,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   icon: {
-    backgroundColor: "#673ab7",
+    backgroundColor: "#FFF",
     borderRadius: 50,
   },
   title: {
-    color: "#673ab7",
+    color: "#FF7800",
     fontWeight: "bold",
     marginTop: 8,
     textAlign: "center",

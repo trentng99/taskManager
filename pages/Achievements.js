@@ -21,37 +21,37 @@ export default function Achievements({ todos }) {
       milestone: 5,
       title: "High Five!",
       description: "5 tasks completed",
-      icon: "folder",
+      icon: "numeric-5-circle",
     },
     {
       milestone: 10,
       title: "Perfect 10",
       description: "10 tasks completed",
-      icon: "folder",
+      icon: "numeric-10-circle",
     },
     {
       milestone: 20,
       title: "Milestone Master",
       description: "20 tasks completed",
-      icon: "folder",
+      icon: "dice-d20",
     },
     {
       milestone: 30,
       title: "Triumphant 30",
       description: "30 tasks completed",
-      icon: "folder",
+      icon: "fast-forward-30",
     },
     {
       milestone: 40,
       title: "40 and Fabulous",
       description: "40 tasks completed",
-      icon: "folder",
+      icon: "medal",
     },
     {
       milestone: 50,
       title: "Golden 50",
       description: "50 tasks completed!",
-      icon: "folder",
+      icon: "trophy-award",
     },
   ];
 
@@ -122,7 +122,7 @@ export default function Achievements({ todos }) {
         onIndexChange={setIndex}
         initialLayout={{ width: layout.width }}
         style={{ marginVertical: 20 }}
-        renderTabBar={(props) => <CustomTabBar {...props} color="#673ab7" />}
+        renderTabBar={(props) => <CustomTabBar {...props} color="#FF7800" />}
       />
     </View>
   );

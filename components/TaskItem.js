@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { Checkbox, Text, Button, Dialog, Portal } from "react-native-paper";
 import { formatDate } from "../commons/formatDate";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import TaskDialog from './TaskDialog';
-
+import TaskDialog from "./TaskDialog";
+import { useTheme } from "react-native-paper";
 
 const TaskItem = ({ item, handleComplete, handleDelete, showDialog }) => {
+  const theme = useTheme();
   const [visible, setVisible] = useState(false);
 
   const showTaskDetails = () => {
@@ -70,7 +70,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     marginBottom: 8,
     height: 60,
-    elevation: 2,
     borderRadius: 10,
     backgroundColor: "#fff",
     justifyContent: "space-between",
